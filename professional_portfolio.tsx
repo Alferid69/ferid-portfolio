@@ -254,7 +254,10 @@ export default function App() {
             <NavLink href="#skills">Skills</NavLink>
             <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#contact">Contact</NavLink>
-            <a href="#contact" className="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-teal-500/10 hover:shadow-teal-500/20 active:scale-95">
+            <a href="/Alferid_Hassen_Resume.pdf" download="Alferid_Hassen_Resume.pdf" className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide">
+              Resume
+            </a>
+            <a href="#contact" className="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-955 font-bold rounded-xl transition-all shadow-lg shadow-teal-500/10 hover:shadow-teal-500/20 active:scale-95">
               Hire Me
             </a>
           </div>
@@ -270,12 +273,15 @@ export default function App() {
 
         {/* Mobile Nav */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl">
+          <div className="md:hidden absolute top-full left-0 w-full bg-slate-955/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl">
             <NavLink href="#about" onClick={closeMenu}>About</NavLink>
             <NavLink href="#skills" onClick={closeMenu}>Skills</NavLink>
             <NavLink href="#projects" onClick={closeMenu}>Projects</NavLink>
             <NavLink href="#contact" onClick={closeMenu}>Contact</NavLink>
-            <a href="#contact" onClick={closeMenu} className="w-full text-center px-5 py-3 bg-teal-500 text-slate-950 font-bold rounded-xl transition-all">
+            <a href="/Alferid_Hassen_Resume.pdf" download="Alferid_Hassen_Resume.pdf" onClick={closeMenu} className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide">
+              Download Resume
+            </a>
+            <a href="#contact" onClick={closeMenu} className="w-full text-center px-5 py-3 bg-teal-500 text-slate-955 font-bold rounded-xl transition-all">
               Hire Me
             </a>
           </div>
@@ -299,7 +305,10 @@ export default function App() {
               <a href="#projects" className="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-955 font-bold rounded-xl transition-all shadow-lg shadow-teal-500/15 hover:shadow-teal-500/35 hover:-translate-y-0.5 active:translate-y-0">
                 View My Work
               </a>
-              <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="px-8 py-4 bg-slate-900/60 hover:bg-slate-900 text-white font-bold rounded-xl border border-slate-800 hover:border-slate-700 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+              <a href="/Alferid_Hassen_Resume.pdf" download="Alferid_Hassen_Resume.pdf" className="px-8 py-4 bg-slate-900/60 hover:bg-slate-900 text-white font-bold rounded-xl border border-slate-800 hover:border-slate-700 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+                Download Resume
+              </a>
+              <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="px-8 py-4 bg-slate-900/20 hover:bg-slate-900/40 text-slate-300 hover:text-white font-bold rounded-xl border border-slate-900 hover:border-slate-800 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
                 <Github size={20} /> GitHub
               </a>
             </div>
