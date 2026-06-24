@@ -29,7 +29,7 @@ const EMAIL_ADDRESS = "mrferidhassen@gmail.com";
 const EMAIL_URL = `mailto:${EMAIL_ADDRESS}`;
 
 // OPTIONAL: Get a free key in 30 seconds at https://web3forms.com to receive form submissions in your inbox
-const WEB3FORMS_ACCESS_KEY: string = "b20f0b25-3a7e-49cf-951a-4a55709568a5"; 
+const WEB3FORMS_ACCESS_KEY: string = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"; 
 
 interface ProjectItem {
   title: string;
@@ -42,7 +42,15 @@ interface ProjectItem {
 }
 
 const PROJECTS: ProjectItem[] = [
-  
+  {
+    title: "Lucid Shopping",
+    description: "A full-stack e-commerce application built with Next.js, Supabase, and Auth0 for authentication. It features a responsive design, product catalog, shopping cart, and secure checkout process.",
+    tech: ['Next.js', 'Supabase', 'Auth0'],
+    links: { 
+      github: 'https://github.com/Alferid69/Lucid-Shoping', 
+      live: 'https://lucid-shoping.vercel.app/' 
+    }
+  },
   {
     title: "OwePay",
     description: "A Flutter application that allows users to manage their debts and credits with friends and family. It features cloud database synchronization via Supabase to keep transactions persistent across devices.",
@@ -52,15 +60,6 @@ const PROJECTS: ProjectItem[] = [
       live: 'https://github.com/Alferid69/OwePay/releases' 
     }
   },
-  {
-    title: "Saro Delivery",
-    description: "A flutter-based delivery application that enables users to track their orders in real-time, manage deliveries, and communicate with drivers. It integrates with a backend built using Node.js and MongoDB.",
-    tech: ['Flutter', 'Dart', 'Node.js', 'MongoDB'],
-    links: { 
-      github: 'https://github.com/Alferid69/saro-delivery'
-    }
-  }
-  ,
   {
     title: "OilSync",
     description: "A mobile application designed to streamline oil inventory tracking, monitor real-time transaction data, and view advanced usage analytics.",
@@ -76,16 +75,7 @@ const PROJECTS: ProjectItem[] = [
     links: { 
       github: 'https://github.com/Alferid69/am-pcd' 
     }
-  },
-  {
-    title: "Lucid Shopping",
-    description: "A full-stack e-commerce application built with Next.js, Supabase, and Auth0 for authentication. It features a responsive design, product catalog, shopping cart, and secure checkout process.",
-    tech: ['Next.js', 'Supabase', 'Auth0'],
-    links: { 
-      github: 'https://github.com/Alferid69/Lucid-Shoping', 
-      live: 'https://lucid-shoping.vercel.app/' 
-    }
-  },
+  }
 ];
 
 // --- Subcomponents ---
@@ -169,7 +159,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
 
 // --- Main App Component ---
 
-export default function Home() {
+export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
