@@ -195,10 +195,10 @@ export default function Home() {
           }),
         }}
       />
-      {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/3 w-[700px] h-[700px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient Background Glows - Optimized with radial gradients instead of expensive CSS blur */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-500/10 via-teal-500/5 to-transparent rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-indigo-500/5 to-transparent rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full pointer-events-none" />
 
       {/* Navigation */}
       <Navbar />
@@ -251,7 +251,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full md:w-2/5 mt-16 md:mt-0 relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/15 to-indigo-500/15 blur-3xl rounded-full"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500/20 via-indigo-500/10 to-transparent rounded-full"></div>
             <div className="relative bg-slate-900/80 border border-slate-800/80 rounded-2xl p-6 shadow-2xl backdrop-blur-sm transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
               <div className="flex gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
