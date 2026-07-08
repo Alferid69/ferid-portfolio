@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Alferid Hassen Mohammed | Full Stack Developer",
   description:
-    "Portfolio of Alferid Hassen, a Full Stack Developer specializing in Flutter, React, and Node.js backend systems.",
+    "Portfolio of Alferid Hassen Mohammed, a Full Stack Developer specializing in Flutter, React, and Node.js backend systems.",
   keywords: [
     "Alferid Hassen",
     "Alferid Hassen Mohammed",
@@ -29,6 +29,33 @@ export const metadata: Metadata = {
     "Ethiopian Full Stack Engineer",
     "Ethiopian App Developer",
   ],
+  authors: [{ name: "Alferid Hassen Mohammed" }],
+  creator: "Alferid Hassen Mohammed",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ferid.me", // You can replace this with your actual custom domain if you have one
+    title: "Alferid Hassen Mohammed | Full Stack Developer",
+    description: "Portfolio of Alferid Hassen Mohammed, a Full Stack Developer specializing in Flutter, React, and Node.js.",
+    siteName: "Alferid Hassen Mohammed Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alferid Hassen Mohammed | Full Stack Developer",
+    description: "Portfolio of Alferid Hassen Mohammed, a Full Stack Developer specializing in Flutter, React, and Node.js.",
+    creator: "@alferid69",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
