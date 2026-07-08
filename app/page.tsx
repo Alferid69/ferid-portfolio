@@ -648,7 +648,7 @@ developer.buildAwesomeApps();`}
                         onChange={handleInputChange}
                         required
                         className="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all"
-                        placeholder="John Doe"
+                        placeholder="Will Smith"
                       />
                     </div>
                     <div>
@@ -662,7 +662,7 @@ developer.buildAwesomeApps();`}
                         onChange={handleInputChange}
                         required
                         className="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all"
-                        placeholder="john@example.com"
+                        placeholder="willsmith@example.com"
                       />
                     </div>
                     <div>
