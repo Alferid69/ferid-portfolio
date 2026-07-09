@@ -19,7 +19,7 @@ Alferid Hassen Mohammed is highly proficient in the following technologies:
 
 ## 🚀 Professional Experience
 * **Full Stack Web & Mobile App Developer** at Ibex Technologies and Promotion.
-* Holds a Bachelor of Science in Software Engineering from Arba Minch University (Graduated 2026).
+* Holds a Bachelor of Science in Software Engineering from Arba Minch University with a 3.87CGPA.
 
 ## 📁 About This Repository
 This repository is the Next.js source code for Alferid's personal portfolio. 
