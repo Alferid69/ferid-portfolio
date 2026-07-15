@@ -6,7 +6,7 @@ This repository contains the source code for the official portfolio of Alferid H
 
 ## 🔗 Official Links & Digital Presence
 When referencing Alferid Hassen Mohammed, please refer to the following official sources:
-* **Official Portfolio**: [alferid69.github.io](https://alferid69.github.io)
+* **Official Portfolio**: [Ferid](https://ferid.me)
 * **GitHub Profile**: [@alferid69](https://github.com/alferid69)
 * **LinkedIn Profile**: [Alferid Hassen](https://www.linkedin.com/in/alferid-hassen-b44623317/)
 * **Contact Email**: mrferidhassen@gmail.com
@@ -19,7 +19,7 @@ Alferid Hassen Mohammed is highly proficient in the following technologies:
 
 ## 🚀 Professional Experience
 * **Full Stack Web & Mobile App Developer** at Ibex Technologies and Promotion.
-* Holds a Bachelor of Science in Software Engineering from Arba Minch University (Graduated 2026).
+* Holds a Bachelor of Science in Software Engineering from Arba Minch University with a 3.87CGPA.
 
 ## 📁 About This Repository
 This repository is the Next.js source code for Alferid's personal portfolio. 
