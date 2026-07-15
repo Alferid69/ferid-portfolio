@@ -153,7 +153,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
           <a
             href={project.links.github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label={`View ${project.title} source code on GitHub`}
             className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 text-sm font-semibold"
           >
             <Github size={16} /> Code
@@ -163,7 +164,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
           <a
             href={project.links.live}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label={`View ${project.title} live demo`}
             className="text-teal-400 hover:text-teal-300 transition-colors flex items-center gap-1.5 text-sm font-semibold"
           >
             <ExternalLink size={16} /> Live Demo
@@ -186,12 +188,62 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Alferid Hassen Mohammed",
+            alternateName: "Alferid Hassen",
             url: "https://ferid.me",
+            email: "mrferidhassen@gmail.com",
+            telephone: "+251912903167",
             jobTitle: "Full Stack Developer",
+            description:
+              "Full Stack Developer specializing in Flutter, React, Node.js, and MERN stack. Building cross-platform applications for web and mobile.",
+            image: "https://ferid.me/opengraph-image",
+            knowsAbout: [
+              "Flutter",
+              "Dart",
+              "React.js",
+              "Node.js",
+              "Next.js",
+              "MongoDB",
+              "Express.js",
+              "Supabase",
+              "Firebase",
+              "PostgreSQL",
+              "Full Stack Development",
+              "Mobile App Development",
+              "RESTful APIs",
+              "MERN Stack",
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Arba Minch",
+              addressCountry: "ET",
+            },
             sameAs: [
               "https://github.com/alferid69",
               "https://www.linkedin.com/in/alferid-hassen-b44623317/",
             ],
+            offers: {
+              "@type": "Offer",
+              description:
+                "Available for freelance and full-time software development opportunities.",
+              availability: "https://schema.org/InStock",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            url: "https://ferid.me",
+            name: "Alferid Hassen Mohammed — Full Stack Developer Portfolio",
+            description:
+              "Portfolio of Alferid Hassen Mohammed, a Full Stack Developer specializing in Flutter, React, and Node.js.",
+            author: {
+              "@type": "Person",
+              name: "Alferid Hassen Mohammed",
+            },
           }),
         }}
       />
@@ -243,7 +295,8 @@ export default function Home() {
               <a
                 href={GITHUB_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="View Alferid's GitHub profile"
                 className="px-8 py-4 bg-slate-900/20 hover:bg-slate-900/40 text-slate-300 hover:text-white font-bold rounded-xl border border-slate-900 hover:border-slate-800 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
               >
                 <Github size={20} /> GitHub
