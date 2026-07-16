@@ -51,6 +51,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#hobbies">Hobbies</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#contact">Contact</NavLink>
           <a
@@ -72,7 +73,9 @@ export default function Navbar() {
         <button
           className="md:hidden text-slate-400 hover:text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-nav"
         >
@@ -82,12 +85,18 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div id="mobile-nav" className="md:hidden absolute top-full left-0 w-full bg-slate-955/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl">
+        <div
+          id="mobile-nav"
+          className="md:hidden absolute top-full left-0 w-full bg-slate-955/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl"
+        >
           <NavLink href="#about" onClick={closeMenu}>
             About
           </NavLink>
           <NavLink href="#skills" onClick={closeMenu}>
             Skills
+          </NavLink>
+          <NavLink href="#hobbies" onClick={closeMenu}>
+            Hobbies
           </NavLink>
           <NavLink href="#projects" onClick={closeMenu}>
             Projects

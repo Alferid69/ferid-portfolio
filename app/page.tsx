@@ -12,6 +12,8 @@ import {
   ChevronRight,
   LucideIcon,
   Phone,
+  Dumbbell,
+  Crown,
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 import ContactForm from "./components/ContactForm";
@@ -37,6 +39,16 @@ interface ProjectItem {
 }
 
 const PROJECTS: ProjectItem[] = [
+  {
+    title: "Arba Minch Public Commodity Distribution System",
+    description:
+      "A web and mobile application for managing the distribution of public commodities in Arba Minch. It features user authentication, inventory management, and reporting tools.",
+    tech: ["Flutter", "Dart", "Express", "MongoDB", "Node.js", "Next.js"],
+    links: {
+      github: "https://github.com/Alferid69/am-pcd",
+      live: "https://am-pcd.tech",
+    },
+  },
   {
     title: "OwePay",
     description:
@@ -65,15 +77,7 @@ const PROJECTS: ProjectItem[] = [
       github: "https://github.com/Alferid69/oilsync-app",
     },
   },
-  {
-    title: "Arba Minch Public Commodity Distribution System",
-    description:
-      "A web and mobile application for managing the distribution of public commodities in Arba Minch. It features user authentication, inventory management, and reporting tools.",
-    tech: ["Flutter", "Dart", "Express", "MongoDB", "Node.js", "Next.js"],
-    links: {
-      github: "https://github.com/Alferid69/am-pcd",
-    },
-  },
+
   {
     title: "Lucid Shopping",
     description:
@@ -125,7 +129,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
     <div className="h-48 bg-slate-900/60 relative overflow-hidden flex items-center justify-center border-b border-slate-800/80">
       {/* Abstract placeholder for project image with grid & radial glow */}
       <div className="absolute inset-0 bg-radial-[at_top_right] from-teal-500/10 via-slate-950 to-slate-950 opacity-90"></div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] opacity-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-size-[24px_24px] opacity-10"></div>
       <Code2
         size={44}
         className="text-slate-600 group-hover:text-teal-400 transition-colors z-10 duration-300"
@@ -194,7 +198,7 @@ export default function Home() {
             telephone: "+251912903167",
             jobTitle: "Full Stack Developer",
             description:
-              "Full Stack Developer specializing in Flutter, React, Node.js, and MERN stack. Building cross-platform applications for web and mobile.",
+              "Full Stack Developer specializing in Flutter, Next.js, Node.js, and MERN stack. Building cross-platform applications for web and mobile.",
             image: "https://ferid.me/opengraph-image",
             knowsAbout: [
               "Flutter",
@@ -214,7 +218,7 @@ export default function Home() {
             ],
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Arba Minch",
+              addressLocality: "Addis Ababa",
               addressCountry: "ET",
             },
             sameAs: [
@@ -248,9 +252,9 @@ export default function Home() {
         }}
       />
       {/* Ambient Background Glows - Optimized with radial gradients instead of expensive CSS blur */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-500/10 via-teal-500/5 to-transparent rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-indigo-500/5 to-transparent rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/3 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-125 h-125 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-teal-500/10 via-teal-500/5 to-transparent rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-150 h-150 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-indigo-500/10 via-indigo-500/5 to-transparent rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-175 h-175 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full pointer-events-none" />
 
       {/* Navigation */}
       <Navbar />
@@ -267,16 +271,16 @@ export default function Home() {
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
               Building{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-indigo-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-400 via-emerald-300 to-indigo-400">
                 Cross-Platform
               </span>{" "}
               Experiences.
             </h1>
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
-              Hi, I&apos;m <strong>Alferid Hassen Mohammed</strong>, a Full Stack
-              Developer specializing in <strong>Flutter</strong> and the{" "}
-              <strong>MERN</strong> stack. I architect robust backends and craft
-              beautiful, high-performance applications for web and mobile.
+              Hi, I&apos;m <strong>Alferid Hassen Mohammed</strong>, a Full
+              Stack Developer. I specialize in <strong>Flutter</strong> and the{" "}
+              <strong>MERN</strong> stack, and I do my best. I am inspired by
+              the fear of being an <s>average</s>.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -304,7 +308,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full md:w-2/5 mt-16 md:mt-0 relative">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500/20 via-indigo-500/10 to-transparent rounded-full"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-teal-500/20 via-indigo-500/10 to-transparent rounded-full"></div>
             <div className="relative bg-slate-900/80 border border-slate-800/80 rounded-2xl p-6 shadow-2xl backdrop-blur-sm transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
               <div className="flex gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -317,12 +321,12 @@ export default function Home() {
   name: "Alferid Hassen Mohammed",
   role: "Full Stack Engineer",
   skills: [
-    "Flutter", "Dart",
+    "Flutter", "Next.js",
     "MongoDB", "Express",
     "React", "Node.js"
   ],
-  passion: "Clean Code",
-  solveProblems: true
+  passion: "Money",
+  isProblemSolver: true
 };
 
 developer.buildAwesomeApps();`}
@@ -365,9 +369,9 @@ developer.buildAwesomeApps();`}
                 title="Frontend (React)"
                 skills={[
                   "React.js",
+                  "Next.js",
                   "Redux / Context",
                   "Tailwind CSS",
-                  "Next.js",
                   "Responsive Design",
                 ]}
               />
@@ -387,12 +391,60 @@ developer.buildAwesomeApps();`}
                 title="Database"
                 skills={[
                   "MongoDB",
-                  "Mongoose",
+                  "MySQL",
                   "PostgreSQL",
-                  "Redis",
                   "Database Design & Optimization",
                 ]}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Hobbies Section */}
+        <section id="hobbies" className="py-24 relative z-10">
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="mb-16 md:text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Beyond the Code
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                When I&apos;m not building applications, here&apos;s how I spend
+                my time.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-8 rounded-3xl hover:border-teal-500/30 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 group flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6">
+                <div className="bg-teal-500/10 w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Crown className="text-teal-400" size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
+                    Chess
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">
+                    A game of strategy and foresight. It keeps my mind sharp,
+                    helps me think multiple steps ahead, and translates
+                    perfectly to problem-solving in software architecture.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-8 rounded-3xl hover:border-teal-500/30 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 group flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6">
+                <div className="bg-teal-500/10 w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Dumbbell className="text-teal-400" size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
+                    Gym
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">
+                    Physical discipline fuels mental endurance. Regular workouts
+                    keep me energized, focused, and provide the perfect balance
+                    to long hours at the keyboard.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

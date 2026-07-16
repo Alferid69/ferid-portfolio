@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Slate to Warm Dark Amber (Obsidian) */
+  --color-slate-950: #0c0a08;
+  --color-slate-900: #141210;
+  --color-slate-800: #2a2520;
+  --color-slate-700: #3d3830;
+  --color-slate-600: #6e6660;
+  --color-slate-500: #6e6660;
+  --color-slate-400: #9e948a;
+  --color-slate-300: #c9b99a;
+  --color-slate-200: #f0ece6;
+  --color-slate-100: #f0ece6;
+  --color-slate-50: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Teal to Electric Orange (Accent) */
+  --color-teal-500: #f97316;
+  --color-teal-400: #fb923c;
+  --color-teal-300: #fdba74;
+  --color-teal-600: #ea580c;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Emerald to Orange variations */
+  --color-emerald-300: #fed7aa;
+  --color-emerald-500: #f97316;
+
+  /* Indigo to Dark Orange */
+  --color-indigo-400: #fb923c;
+  --color-indigo-500: #ea580c;
+
+  /* Green to bright Orange */
+  --color-green-500: #f97316;
+
+  --font-sans: var(--font-inter), var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-slate-950);
+  color: var(--color-slate-100);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 50;
 }
