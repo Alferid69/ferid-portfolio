@@ -55,8 +55,8 @@ const PROJECTS: ProjectItem[] = [
       "A Flutter application that allows users to manage their debts and credits with friends and family. It features cloud database synchronization via Supabase to keep transactions persistent across devices.",
     tech: ["Flutter", "Dart", "Supabase"],
     links: {
-      github: "https://github.com/Alferid69/OwePay",
-      live: "https://github.com/Alferid69/OwePay/releases",
+      // github: "https://github.com/Alferid69/OwePay",
+      live: "https://play.google.com/store/apps/details?id=com.alferid.owepay",
     },
   },
   {
