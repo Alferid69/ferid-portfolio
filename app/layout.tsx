@@ -19,14 +19,17 @@ const BASE_URL = "https://ferid.me";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Alferid Hassen Mohammed | Full Stack Developer",
+    default: "Alferid Hassen Mohammed (Ferid) | Full Stack & Flutter Developer",
     template: "%s | Alferid Hassen Mohammed",
   },
   description:
-    "Portfolio of Alferid Hassen Mohammed, a Full Stack Developer specializing in Flutter, React, Node.js, and MERN stack. Available for freelance and full-time opportunities.",
+    "Official portfolio of Alferid Hassen Mohammed (Ferid) — Full Stack Web & Mobile Developer specializing in Flutter, React, Next.js, and Node.js. Available for freelance and full-time opportunities.",
   keywords: [
     "Alferid Hassen",
     "Alferid Hassen Mohammed",
+    "Ferid Hassen",
+    "Ferid",
+    "Alferid",
     "Alferid Full Stack Developer",
     "Flutter Developer Ethiopia",
     "Flutter Developer",
@@ -56,13 +59,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  verification: {
+    google: "google8b6b43c4c40df244",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    title: "Alferid Hassen Mohammed | Full Stack Developer",
+    title: "Alferid Hassen Mohammed (Ferid) | Full Stack Developer",
     description:
-      "Portfolio of Alferid Hassen Mohammed — Full Stack Developer specializing in Flutter, React & Node.js. Building cross-platform apps for web and mobile.",
+      "Portfolio of Alferid Hassen Mohammed (Ferid) — Full Stack Developer specializing in Flutter, React & Node.js. Building cross-platform apps for web and mobile.",
     siteName: "Alferid Hassen Mohammed Portfolio",
     images: [
       {
@@ -75,9 +81,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alferid Hassen Mohammed | Full Stack Developer",
+    title: "Alferid Hassen Mohammed (Ferid) | Full Stack Developer",
     description:
-      "Portfolio of Alferid Hassen Mohammed — Full Stack Developer specializing in Flutter, React & Node.js.",
+      "Portfolio of Alferid Hassen Mohammed (Ferid) — Full Stack Developer specializing in Flutter, React & Node.js.",
     creator: "@alferid69",
     images: [
       {

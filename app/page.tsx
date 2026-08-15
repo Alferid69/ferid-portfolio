@@ -190,64 +190,92 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Alferid Hassen Mohammed",
-            alternateName: "Alferid Hassen",
-            url: "https://ferid.me",
-            email: "mrferidhassen@gmail.com",
-            telephone: "+251912903167",
-            jobTitle: "Full Stack Developer",
-            description:
-              "Full Stack Developer specializing in Flutter, Next.js, Node.js, and MERN stack. Building cross-platform applications for web and mobile.",
-            image: "https://ferid.me/opengraph-image",
-            knowsAbout: [
-              "Flutter",
-              "Dart",
-              "React.js",
-              "Node.js",
-              "Next.js",
-              "MongoDB",
-              "Express.js",
-              "Supabase",
-              "Firebase",
-              "PostgreSQL",
-              "Full Stack Development",
-              "Mobile App Development",
-              "RESTful APIs",
-              "MERN Stack",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://ferid.me/#person",
+                name: "Alferid Hassen Mohammed",
+                alternateName: [
+                  "Alferid Hassen",
+                  "Ferid Hassen",
+                  "Ferid",
+                  "Alferid",
+                  "Alferid Mohammed",
+                  "mrferidhassen",
+                ],
+                url: "https://ferid.me",
+                email: "mrferidhassen@gmail.com",
+                telephone: "+251912903167",
+                jobTitle: [
+                  "Full Stack Developer",
+                  "Mobile App Developer",
+                  "Software Engineer",
+                  "Flutter Developer",
+                ],
+                description:
+                  "Portfolio of Alferid Hassen Mohammed (Ferid), a Full Stack Developer specializing in Flutter, Next.js, React, Node.js, and MERN stack.",
+                image: "https://ferid.me/opengraph-image",
+                alumniOf: {
+                  "@type": "CollegeOrUniversity",
+                  name: "Arba Minch University",
+                },
+                nationality: {
+                  "@type": "Country",
+                  name: "Ethiopia",
+                },
+                knowsAbout: [
+                  "Flutter",
+                  "Dart",
+                  "React.js",
+                  "Node.js",
+                  "Next.js",
+                  "MongoDB",
+                  "Express.js",
+                  "Supabase",
+                  "Firebase",
+                  "PostgreSQL",
+                  "Full Stack Development",
+                  "Mobile App Development",
+                  "RESTful APIs",
+                  "MERN Stack",
+                ],
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Addis Ababa",
+                  addressCountry: "ET",
+                },
+                sameAs: [
+                  "https://github.com/alferid69",
+                  "https://www.linkedin.com/in/alferid-hassen-b44623317/",
+                ],
+                offers: {
+                  "@type": "Offer",
+                  description:
+                    "Available for freelance and full-time software development opportunities.",
+                  availability: "https://schema.org/InStock",
+                },
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://ferid.me/#website",
+                url: "https://ferid.me",
+                name: "Alferid Hassen Mohammed (Ferid) — Portfolio",
+                description:
+                  "Official portfolio website of Alferid Hassen Mohammed (Ferid), Full Stack Developer specializing in Flutter, React, Next.js, and Node.js.",
+                publisher: {
+                  "@id": "https://ferid.me/#person",
+                },
+              },
+              {
+                "@type": "ProfilePage",
+                "@id": "https://ferid.me/#profilepage",
+                url: "https://ferid.me",
+                name: "Alferid Hassen Mohammed | Full Stack Developer Portfolio",
+                mainEntity: {
+                  "@id": "https://ferid.me/#person",
+                },
+              },
             ],
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Addis Ababa",
-              addressCountry: "ET",
-            },
-            sameAs: [
-              "https://github.com/alferid69",
-              "https://www.linkedin.com/in/alferid-hassen-b44623317/",
-            ],
-            offers: {
-              "@type": "Offer",
-              description:
-                "Available for freelance and full-time software development opportunities.",
-              availability: "https://schema.org/InStock",
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            url: "https://ferid.me",
-            name: "Alferid Hassen Mohammed — Full Stack Developer Portfolio",
-            description:
-              "Portfolio of Alferid Hassen Mohammed, a Full Stack Developer specializing in Flutter, React, and Node.js.",
-            author: {
-              "@type": "Person",
-              name: "Alferid Hassen Mohammed",
-            },
           }),
         }}
       />
@@ -269,18 +297,22 @@ export default function Home() {
             <div className="inline-block px-4 py-1.5 bg-teal-500/10 text-teal-400 rounded-full text-sm font-semibold mb-6 border border-teal-500/20 shadow-inner">
               👋 Available for new opportunities
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
-              Building{" "}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+              Hi, I&apos;m{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-400 via-emerald-300 to-indigo-400">
-                Cross-Platform
-              </span>{" "}
-              Experiences.
+                Alferid Hassen
+              </span>
+              .<br />
+              <span className="text-slate-200 block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2">
+                Building Cross-Platform Experiences.
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
-              Hi, I&apos;m <strong>Alferid Hassen Mohammed</strong>, a Full
-              Stack Developer. I specialize in <strong>Flutter</strong> and the{" "}
-              <strong>MERN</strong> stack, and I do my best. I am inspired by
-              the fear of being an <s>average</s>.
+              I&apos;m <strong>Alferid Hassen Mohammed</strong> (also known as{" "}
+              <strong>Ferid</strong>), a Full Stack Developer. I specialize in{" "}
+              <strong>Flutter</strong> and the <strong>MERN</strong> stack, and
+              I build scalable, cross-platform apps with top-tier user
+              experiences.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
