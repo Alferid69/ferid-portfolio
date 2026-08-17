@@ -1,19 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import { Loader2, ChevronRight, CheckCircle2 } from "lucide-react";
+import { EMAIL_ADDRESS, WEB3FORMS_ACCESS_KEY } from "../config";
 
-const EMAIL_ADDRESS = "mrferidhassen@gmail.com";
-const WEB3FORMS_ACCESS_KEY: string = "b20f0b25-3a7e-49cf-951a-4a55709568a5";
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+const INITIAL_FORM_DATA = {
+  name: "",
+  email: "",
+  message: "",
+};
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [formStatus, setFormStatus] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const [validationError, setValidationError] = useState("");
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -24,9 +25,16 @@ export default function ContactForm() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setValidationError("");
 
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("Please fill in all fields.");
+    const missingFields = (
+      ["name", "email", "message"] as const
+    ).filter((field) => !formData[field].trim());
+
+    if (missingFields.length > 0) {
+      setValidationError(
+        `Please fill in: ${missingFields.join(", ")}.`,
+      );
       return;
     }
 
@@ -34,10 +42,7 @@ export default function ContactForm() {
       !WEB3FORMS_ACCESS_KEY ||
       WEB3FORMS_ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY_HERE"
     ) {
-      alert(
-        `Note: You haven't configured a Web3Forms access key yet. To send emails directly from the browser, get a free key from web3forms.com and paste it in the code.\n\nOpening your email client as a fallback!`,
-      );
-
+      // Fallback: no Web3Forms key configured, open the email client instead.
       const subject = encodeURIComponent(
         `Portfolio Message from ${formData.name}`,
       );
@@ -45,6 +50,9 @@ export default function ContactForm() {
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
       );
       window.open(`mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`);
+      setValidationError(
+        "No Web3Forms access key configured — opened your email client instead.",
+      );
       return;
     }
 
@@ -70,7 +78,7 @@ export default function ContactForm() {
       const data = await response.json();
       if (data.success) {
         setFormStatus("success");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData(INITIAL_FORM_DATA);
       } else {
         setFormStatus("error");
       }
@@ -82,7 +90,10 @@ export default function ContactForm() {
 
   if (formStatus === "success") {
     return (
-      <div className="bg-slate-950/60 border border-emerald-500/30 p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4">
+      <div
+        role="status"
+        className="bg-slate-950/60 border border-emerald-500/30 p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4"
+      >
         <CheckCircle2 className="text-emerald-400 w-16 h-16 animate-bounce" />
         <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
         <p className="text-slate-400 text-sm max-w-xs">
@@ -100,12 +111,26 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="space-y-4" onSubmit={handleFormSubmit}>
+    <form className="space-y-4" onSubmit={handleFormSubmit} noValidate>
+      {/* Honeypot field to filter out bots (Web3Forms convention) */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        style={{ display: "none" }}
+        aria-hidden="true"
+      />
       <div>
-        <label className="block text-sm font-medium text-slate-400 mb-1.5">
+        <label
+          htmlFor="contact-name"
+          className="block text-sm font-medium text-slate-400 mb-1.5"
+        >
           Name
         </label>
         <input
+          id="contact-name"
           type="text"
           name="name"
           value={formData.name}
@@ -116,10 +141,14 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-slate-400 mb-1.5">
+        <label
+          htmlFor="contact-email"
+          className="block text-sm font-medium text-slate-400 mb-1.5"
+        >
           Email
         </label>
         <input
+          id="contact-email"
           type="email"
           name="email"
           value={formData.email}
@@ -130,10 +159,14 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-slate-400 mb-1.5">
+        <label
+          htmlFor="contact-message"
+          className="block text-sm font-medium text-slate-400 mb-1.5"
+        >
           Message
         </label>
         <textarea
+          id="contact-message"
           rows={4}
           name="message"
           value={formData.message}
@@ -144,10 +177,10 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
-      {formStatus === "error" && (
-        <p className="text-red-400 text-sm">
-          Something went wrong. Please try again or email directly at{" "}
-          {EMAIL_ADDRESS}.
+      {(formStatus === "error" || validationError) && (
+        <p role="alert" className="text-red-400 text-sm">
+          {validationError ||
+            `Something went wrong. Please try again or email directly at ${EMAIL_ADDRESS}.`}
         </p>
       )}
 

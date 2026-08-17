@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Terminal, X, Menu } from "lucide-react";
+import { RESUME_URL } from "../config";
 
 interface NavLinkProps {
   href: string;
@@ -55,7 +56,7 @@ export default function Navbar() {
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#contact">Contact</NavLink>
           <a
-            href="/Alferid_Hassen_Resume.pdf"
+            href={RESUME_URL}
             download="Alferid_Hassen_Resume.pdf"
             className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide"
           >
@@ -63,7 +64,7 @@ export default function Navbar() {
           </a>
           <a
             href="#contact"
-            className="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-955 font-bold rounded-xl transition-all shadow-lg shadow-teal-500/10 hover:shadow-teal-500/20 active:scale-95"
+            className="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-teal-500/10 hover:shadow-teal-500/20 active:scale-95"
           >
             Hire Me
           </a>
@@ -87,7 +88,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div
           id="mobile-nav"
-          className="md:hidden absolute top-full left-0 w-full bg-slate-955/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl"
+          className="md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl"
         >
           <NavLink href="#about" onClick={closeMenu}>
             About
@@ -105,7 +106,7 @@ export default function Navbar() {
             Contact
           </NavLink>
           <a
-            href="/Alferid_Hassen_Resume.pdf"
+            href={RESUME_URL}
             download="Alferid_Hassen_Resume.pdf"
             onClick={closeMenu}
             className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide"
