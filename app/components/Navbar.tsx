@@ -51,9 +51,10 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           <NavLink href="#about">About</NavLink>
+          <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#hobbies">Hobbies</NavLink>
           <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#hobbies">Hobbies</NavLink>
           <NavLink href="#contact">Contact</NavLink>
           <a
             href={RESUME_URL}
@@ -93,14 +94,17 @@ export default function Navbar() {
           <NavLink href="#about" onClick={closeMenu}>
             About
           </NavLink>
+          <NavLink href="#experience" onClick={closeMenu}>
+            Experience
+          </NavLink>
           <NavLink href="#skills" onClick={closeMenu}>
             Skills
           </NavLink>
-          <NavLink href="#hobbies" onClick={closeMenu}>
-            Hobbies
-          </NavLink>
           <NavLink href="#projects" onClick={closeMenu}>
             Projects
+          </NavLink>
+          <NavLink href="#hobbies" onClick={closeMenu}>
+            Hobbies
           </NavLink>
           <NavLink href="#contact" onClick={closeMenu}>
             Contact

@@ -44,6 +44,16 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Prevent PDF resume from cannibalizing search ranking of the homepage
+        source: "/(.*)\\.pdf",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, follow",
+          },
+        ],
+      },
     ];
   },
 

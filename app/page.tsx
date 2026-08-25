@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Hobbies from "./components/Hobbies";
 import Projects from "./components/Projects";
@@ -119,14 +120,17 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Experience & Education Section */}
+        <Experience />
+
         {/* Skills Section */}
         <Skills />
 
-        {/* Hobbies Section */}
-        <Hobbies />
-
         {/* Projects Section */}
         <Projects />
+
+        {/* Hobbies Section */}
+        <Hobbies />
 
         {/* Contact Section */}
         <Contact />

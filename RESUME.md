@@ -2,7 +2,7 @@
 
 **Full Stack Web & Mobile App Developer**  
 Addis Ababa, Ethiopia | +251 912 903 167 | [mrferidhassen@gmail.com](mailto:mrferidhassen@gmail.com)  
-[GitHub (github.com/alferid69)](https://github.com/alferid69) | [LinkedIn](https://www.linkedin.com/in/alferid-hassen-b44623317/) | [Portfolio (alferid.vercel.app)](https://alferid.vercel.app)
+[GitHub (github.com/alferid69)](https://github.com/alferid69) | [LinkedIn](https://www.linkedin.com/in/alferid-hassen-b44623317/) | [Portfolio (ferid.me)](https://ferid.me)
 
 ---
 
