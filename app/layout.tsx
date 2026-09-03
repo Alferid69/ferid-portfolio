@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const BASE_URL = "https://ferid.me";
@@ -114,16 +116,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${outfit.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
     >
       <head>
-        <meta name="theme-color" content="#14b8a6" />
+        <meta name="theme-color" content="#090a0f" />
         <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://github.com" />
         <link rel="dns-prefetch" href="https://www.linkedin.com" />
       </head>
-      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100">
+      <body className="min-h-full flex flex-col bg-[#090a0f] text-[#f8fafc] font-sans selection:bg-amber-500/20 selection:text-amber-200">
         {children}
         <Analytics />
         <SpeedInsights />

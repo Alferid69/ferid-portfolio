@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Loader2, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Loader2, ArrowRight, CheckCircle2 } from "lucide-react";
 import { EMAIL_ADDRESS, WEB3FORMS_ACCESS_KEY } from "../config";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -42,7 +42,6 @@ export default function ContactForm() {
       !WEB3FORMS_ACCESS_KEY ||
       WEB3FORMS_ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY_HERE"
     ) {
-      // Fallback: no Web3Forms key configured, open the email client instead.
       const subject = encodeURIComponent(
         `Portfolio Message from ${formData.name}`,
       );
@@ -92,17 +91,18 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="bg-slate-950/60 border border-emerald-500/30 p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4"
+        className="bg-[#161822] border border-emerald-500/30 p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4"
       >
-        <CheckCircle2 className="text-emerald-400 w-16 h-16 animate-bounce" />
-        <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
-        <p className="text-slate-400 text-sm max-w-xs">
-          Thank you! Your message has been sent successfully. I will get back to
-          you as soon as possible.
+        <div className="w-14 h-14 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+          <CheckCircle2 size={32} />
+        </div>
+        <h3 className="text-xl font-bold text-white">Message Sent!</h3>
+        <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
+          Thank you. Your message has been routed successfully and I will respond promptly.
         </p>
         <button
           onClick={() => setFormStatus("idle")}
-          className="mt-4 px-6 py-2 bg-slate-900 hover:bg-slate-800 text-teal-400 border border-slate-800 rounded-lg text-sm transition-all"
+          className="mt-4 px-5 py-2 bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 rounded-xl text-xs font-medium transition-all"
         >
           Send another message
         </button>
@@ -125,7 +125,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-name"
-          className="block text-sm font-medium text-slate-400 mb-1.5"
+          className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-medium"
         >
           Name
         </label>
@@ -136,14 +136,14 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all"
-          placeholder="Will Smith"
+          className="w-full bg-[#161822] border border-[#232736] rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-all text-sm"
+          placeholder="e.g. Alex Morgan"
         />
       </div>
       <div>
         <label
           htmlFor="contact-email"
-          className="block text-sm font-medium text-slate-400 mb-1.5"
+          className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-medium"
         >
           Email
         </label>
@@ -154,14 +154,14 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all"
-          placeholder="willsmith@example.com"
+          className="w-full bg-[#161822] border border-[#232736] rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-all text-sm"
+          placeholder="alex@company.com"
         />
       </div>
       <div>
         <label
           htmlFor="contact-message"
-          className="block text-sm font-medium text-slate-400 mb-1.5"
+          className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-medium"
         >
           Message
         </label>
@@ -172,30 +172,30 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleInputChange}
           required
-          className="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all"
-          placeholder="How can I help you?"
+          className="w-full bg-[#161822] border border-[#232736] rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-all text-sm resize-none"
+          placeholder="Tell me about your project or opportunity..."
         ></textarea>
       </div>
 
       {(formStatus === "error" || validationError) && (
-        <p role="alert" className="text-red-400 text-sm">
+        <p role="alert" className="text-red-400 text-xs font-mono">
           {validationError ||
-            `Something went wrong. Please try again or email directly at ${EMAIL_ADDRESS}.`}
+            `Submission failed. Please email directly at ${EMAIL_ADDRESS}.`}
         </p>
       )}
 
       <button
         type="submit"
         disabled={formStatus === "submitting"}
-        className="w-full bg-teal-500 hover:bg-teal-400 disabled:bg-teal-600 disabled:cursor-not-allowed text-slate-950 font-bold py-3.5 px-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-500/10 hover:shadow-teal-500/20 active:scale-98"
+        className="w-full bg-amber-500 hover:bg-amber-400 disabled:bg-amber-600/50 disabled:cursor-not-allowed text-black font-semibold py-3.5 px-4 rounded-xl transition-all flex items-center justify-center gap-2 active:scale-98 text-sm shadow-sm"
       >
         {formStatus === "submitting" ? (
           <>
-            <Loader2 size={18} className="animate-spin" /> Sending...
+            <Loader2 size={16} className="animate-spin" /> Sending message...
           </>
         ) : (
           <>
-            Send Message <ChevronRight size={18} />
+            Send Message <ArrowRight size={16} />
           </>
         )}
       </button>

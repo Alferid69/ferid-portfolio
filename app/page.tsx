@@ -16,7 +16,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-teal-500/30 selection:text-teal-200 overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#090a0f] text-[#f8fafc] font-sans selection:bg-amber-500/20 selection:text-amber-200 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -108,10 +108,11 @@ export default function Home() {
           }),
         }}
       />
-      {/* Ambient Background Glows - Optimized with radial gradients instead of expensive CSS blur */}
-      <div className="absolute top-0 left-1/4 w-125 h-125 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-teal-500/10 via-teal-500/5 to-transparent rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-150 h-150 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-indigo-500/10 via-indigo-500/5 to-transparent rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/3 w-175 h-175 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full pointer-events-none" />
+      {/* Fine architectural hairline background grid */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" 
+      />
 
       {/* Navigation */}
       <Navbar />

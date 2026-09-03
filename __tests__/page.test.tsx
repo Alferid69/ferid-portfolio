@@ -20,7 +20,7 @@ test("renders section headings and navigation links", () => {
 
 test("renders project cards from data", () => {
   render(<Home />);
-  expect(screen.getByRole("heading", { name: "OwePay" })).toBeDefined();
+  expect(screen.getByRole("heading", { name: /OwePay/ })).toBeDefined();
   expect(
     screen.getByRole("heading", { name: "Lucid Shopping" }),
   ).toBeDefined();

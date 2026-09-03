@@ -13,7 +13,7 @@ const NavLink = ({ href, children, onClick }: NavLinkProps) => (
   <a
     href={href}
     onClick={onClick}
-    className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide"
+    className="text-slate-400 hover:text-slate-100 transition-colors font-medium text-sm tracking-normal"
   >
     {children}
   </a>
@@ -25,7 +25,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -34,46 +34,52 @@ export default function Navbar() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-slate-950/80 backdrop-blur-lg border-b border-slate-900 py-4" : "bg-transparent py-6"}`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-200 ${
+        isScrolled
+          ? "bg-[#090a0f]/85 backdrop-blur-md border-b border-[#232736] py-3.5"
+          : "bg-transparent py-5"
+      }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <a
           href="#"
-          className="text-2xl font-bold text-white tracking-tighter flex items-center gap-2"
+          className="text-xl font-bold text-white tracking-tight flex items-center gap-2 group"
         >
-          <Terminal className="text-teal-400" size={28} />
+          <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 group-hover:border-amber-500/40 transition-colors">
+            <Terminal size={18} />
+          </div>
           <span>
-            Alferid<span className="text-teal-400">.</span>
+            Alferid<span className="text-amber-500">.</span>
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <nav aria-label="Main Navigation" className="hidden md:flex items-center space-x-7">
           <NavLink href="#about">About</NavLink>
           <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#hobbies">Hobbies</NavLink>
+          <NavLink href="#hobbies">Beyond Code</NavLink>
           <NavLink href="#contact">Contact</NavLink>
           <a
             href={RESUME_URL}
             download="Alferid_Hassen_Resume.pdf"
-            className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide"
+            className="text-slate-400 hover:text-slate-100 transition-colors font-medium text-sm"
           >
             Resume
           </a>
           <a
             href="#contact"
-            className="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-teal-500/10 hover:shadow-teal-500/20 active:scale-95"
+            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-lg transition-all text-sm active:scale-95 shadow-sm"
           >
             Hire Me
           </a>
-        </div>
+        </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-slate-400 hover:text-white"
+          className="md:hidden text-slate-300 hover:text-white p-1 rounded-lg border border-white/10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={
             mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
@@ -81,7 +87,7 @@ export default function Navbar() {
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-nav"
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -89,7 +95,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div
           id="mobile-nav"
-          className="md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-slate-900 py-6 px-6 flex flex-col space-y-4 shadow-xl"
+          className="md:hidden absolute top-full left-0 w-full bg-[#090a0f]/95 backdrop-blur-xl border-b border-[#232736] py-6 px-6 flex flex-col space-y-4 shadow-2xl"
         >
           <NavLink href="#about" onClick={closeMenu}>
             About
@@ -104,7 +110,7 @@ export default function Navbar() {
             Projects
           </NavLink>
           <NavLink href="#hobbies" onClick={closeMenu}>
-            Hobbies
+            Beyond Code
           </NavLink>
           <NavLink href="#contact" onClick={closeMenu}>
             Contact
@@ -113,19 +119,19 @@ export default function Navbar() {
             href={RESUME_URL}
             download="Alferid_Hassen_Resume.pdf"
             onClick={closeMenu}
-            className="text-slate-400 hover:text-teal-400 transition-colors font-medium text-sm tracking-wide"
+            className="text-slate-400 hover:text-slate-100 transition-colors font-medium text-sm"
           >
             Download Resume
           </a>
           <a
             href="#contact"
             onClick={closeMenu}
-            className="w-full text-center px-5 py-3 bg-teal-500 text-slate-950 font-bold rounded-xl transition-all"
+            className="w-full text-center px-4 py-2.5 bg-amber-500 text-black font-semibold rounded-lg transition-all text-sm"
           >
             Hire Me
           </a>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

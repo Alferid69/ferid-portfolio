@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Alferid Hassen Mohammed — Full Stack Developer | Flutter & MERN Stack";
+  "Alferid Hassen Mohammed — Full Stack Developer | Flutter & Next.js";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -9,8 +9,7 @@ export default function Image() {
   return new ImageResponse(
     <div
       style={{
-        background:
-          "linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%)",
+        backgroundColor: "#090a0f",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -22,58 +21,32 @@ export default function Image() {
         position: "relative",
       }}
     >
-      {/* Decorative teal glow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-100px",
-          right: "-100px",
-          width: "500px",
-          height: "500px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(20,184,166,0.25) 0%, transparent 70%)",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-80px",
-          left: "200px",
-          width: "400px",
-          height: "400px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)",
-        }}
-      />
-
-      {/* Badge */}
+      {/* Top Spec Badge */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
-          background: "rgba(20,184,166,0.12)",
-          border: "1px solid rgba(20,184,166,0.3)",
-          borderRadius: "100px",
-          padding: "8px 20px",
-          marginBottom: "32px",
+          background: "rgba(245, 158, 11, 0.15)",
+          border: "1px solid #f59e0b",
+          borderRadius: "9999px",
+          padding: "6px 18px",
+          marginBottom: "28px",
         }}
       >
-        <span style={{ color: "#2dd4bf", fontSize: "18px", fontWeight: 600 }}>
-          • Available for new opportunities
+        <span style={{ color: "#fbbf24", fontSize: "14px", fontWeight: 600 }}>
+          ENGINEER PROFILE // ADDIS ABABA, ET
         </span>
       </div>
 
       {/* Name */}
       <div
         style={{
-          fontSize: "72px",
+          fontSize: "56px",
           fontWeight: 800,
           color: "#ffffff",
           lineHeight: 1.1,
-          marginBottom: "16px",
-          letterSpacing: "-2px",
+          marginBottom: "12px",
+          letterSpacing: "-1px",
         }}
       >
         Alferid Hassen
@@ -82,29 +55,26 @@ export default function Image() {
       {/* Title */}
       <div
         style={{
-          fontSize: "36px",
-          fontWeight: 600,
-          background: "linear-gradient(90deg, #2dd4bf, #a5f3fc, #818cf8)",
-          backgroundClip: "text",
-          color: "transparent",
-          marginBottom: "28px",
-          WebkitBackgroundClip: "text",
+          fontSize: "32px",
+          fontWeight: 700,
+          color: "#fbbf24",
+          marginBottom: "24px",
         }}
       >
-        Full Stack Developer
+        Full Stack & Mobile Engineer
       </div>
 
       {/* Description */}
       <div
         style={{
-          fontSize: "22px",
+          fontSize: "18px",
           color: "#94a3b8",
           lineHeight: 1.5,
-          maxWidth: "700px",
+          maxWidth: "750px",
         }}
       >
-        Specializing in Flutter, React & Node.js — Crafting robust, beautiful
-        cross-platform apps.
+        Specializing in Flutter (Dart) & Next.js/Node ecosystems. Engineering
+        resilient cross-platform applications and scalable systems.
       </div>
 
       {/* Skills pills */}
@@ -115,16 +85,16 @@ export default function Image() {
           marginTop: "40px",
         }}
       >
-        {["Flutter", "React", "Node.js", "MongoDB", "Next.js"].map((skill) => (
+        {["Flutter", "Dart", "Next.js", "React", "Node.js", "PostgreSQL"].map((skill) => (
           <div
             key={skill}
             style={{
-              padding: "8px 20px",
-              background: "rgba(15,23,42,0.8)",
-              border: "1px solid rgba(51,65,85,0.8)",
+              padding: "6px 16px",
+              background: "#161822",
+              border: "1px solid #232736",
               borderRadius: "8px",
-              color: "#cbd5e1",
-              fontSize: "18px",
+              color: "#f8fafc",
+              fontSize: "14px",
               fontWeight: 500,
             }}
           >
@@ -139,9 +109,9 @@ export default function Image() {
           position: "absolute",
           bottom: "48px",
           right: "80px",
-          fontSize: "20px",
-          color: "#475569",
-          fontWeight: 500,
+          fontSize: "18px",
+          color: "#f59e0b",
+          fontWeight: 600,
         }}
       >
         ferid.me
