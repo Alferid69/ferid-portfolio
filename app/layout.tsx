@@ -120,6 +120,7 @@ export default function RootLayout({
     >
       <head>
         <meta name="theme-color" content="#090a0f" />
+        <meta name="google-adsense-account" content="ca-pub-1725369582993775"></meta>
         <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://github.com" />
