@@ -33,7 +33,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     role: "Full Stack Web & Mobile App Developer",
     company: "Ibex Technologies and Promotion",
-    period: "Feb 2025 – May 2025",
+    period: "Feb 2025 – Dec 2025",
     location: "Addis Ababa, Ethiopia",
     description:
       "Engineered full-stack solutions and cross-platform mobile applications for public distribution systems and enterprise resource workflows.",
