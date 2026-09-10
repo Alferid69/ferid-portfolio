@@ -73,10 +73,18 @@ export default function Navbar() {
           >
             Resume
           </a>
-          <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 bg-white/5 border border-amber-500/25 rounded-full text-[11px] font-mono text-amber-400 select-none">
+          <button
+            onClick={() => {
+              soundFx.playClick();
+              window.dispatchEvent(new CustomEvent("toggle-3d-hud"));
+            }}
+            className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-amber-500/25 hover:border-amber-500/50 rounded-full text-[11px] font-mono text-amber-400 transition-all cursor-pointer select-none"
+            title="Toggle 3D HUD Controls"
+            aria-label="Toggle 3D HUD Controls"
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>3D WORLD ON</span>
-          </div>
+            <span>3D CONTROLS</span>
+          </button>
           <a
             href="#contact"
             onClick={() => soundFx.playClick()}
@@ -132,6 +140,17 @@ export default function Navbar() {
           >
             Download Resume
           </a>
+          <button
+            onClick={() => {
+              closeMenu();
+              soundFx.playClick();
+              window.dispatchEvent(new CustomEvent("toggle-3d-hud"));
+            }}
+            className="text-left text-amber-400 hover:text-amber-300 font-mono text-sm py-1 flex items-center gap-2 cursor-pointer"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>3D Controls</span>
+          </button>
           <a
             href="#contact"
             onClick={closeMenu}

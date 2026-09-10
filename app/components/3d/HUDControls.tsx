@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Compass, 
   Volume2, 
   VolumeX, 
   RotateCcw,
-  Sparkles
+  Sparkles,
+  X
 } from "lucide-react";
 import { soundFx } from "./soundFx";
 
@@ -26,7 +27,13 @@ export default function HUDControls({
   fps,
 }: HUDControlsProps) {
   const [audioEnabled, setAudioEnabled] = useState(soundFx.enabled);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
+  useEffect(() => {
+    const handleToggle = () => setIsCollapsed((prev) => !prev);
+    window.addEventListener("toggle-3d-hud", handleToggle);
+    return () => window.removeEventListener("toggle-3d-hud", handleToggle);
+  }, []);
 
   const toggleAudio = () => {
     const newState = soundFx.toggle();
@@ -46,7 +53,7 @@ export default function HUDControls({
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2.5 font-mono text-xs select-none">
       {/* HUD Main Body */}
       {!isCollapsed && (
-        <div className="bg-[#090a0f]/90 border border-white/10 backdrop-blur-xl rounded-2xl p-3 sm:p-4 shadow-2xl flex flex-col gap-3 max-w-[340px] w-full animate-in fade-in slide-in-from-bottom-3 duration-200">
+        <div className="bg-[#090a0f]/95 border border-white/15 backdrop-blur-xl rounded-2xl p-3.5 sm:p-4 shadow-2xl flex flex-col gap-3 max-w-[340px] w-full animate-in fade-in zoom-in-95 duration-150">
           {/* Header row: Mode & FPS */}
           <div className="flex items-center justify-between pb-2.5 border-b border-white/10">
             <div className="flex items-center gap-2 text-amber-400 font-bold">
@@ -58,11 +65,15 @@ export default function HUDControls({
                 {fps} FPS
               </span>
               <button
-                onClick={() => setIsCollapsed(true)}
-                className="text-slate-400 hover:text-white p-1 rounded transition-colors"
-                title="Minimize HUD"
+                onClick={() => {
+                  soundFx.playClick();
+                  setIsCollapsed(true);
+                }}
+                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors"
+                title="Close 3D HUD"
+                aria-label="Close 3D HUD"
               >
-                —
+                <X size={15} />
               </button>
             </div>
           </div>
@@ -145,11 +156,12 @@ export default function HUDControls({
             soundFx.playClick();
             setIsCollapsed(false);
           }}
-          className="flex items-center gap-2 bg-[#090a0f]/90 border border-amber-500/40 text-amber-400 px-3.5 py-2.5 rounded-full shadow-2xl backdrop-blur-xl hover:scale-105 active:scale-95 transition-all text-xs font-mono"
+          className="flex items-center gap-2 bg-[#090a0f]/80 hover:bg-[#161822] border border-white/10 hover:border-amber-500/40 text-slate-300 hover:text-amber-400 px-3 py-2 rounded-full shadow-lg backdrop-blur-md hover:scale-105 active:scale-95 transition-all text-xs font-mono cursor-pointer"
+          title="Open 3D Controls"
+          aria-label="Open 3D Controls"
         >
-          <Compass size={15} />
+          <Compass size={14} />
           <span>3D HUD</span>
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
         </button>
       )}
     </div>
