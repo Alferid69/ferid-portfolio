@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Terminal, X, Menu } from "lucide-react";
 import { RESUME_URL } from "../config";
+import { soundFx } from "./3d/soundFx";
 
 interface NavLinkProps {
   href: string;
@@ -12,7 +13,10 @@ interface NavLinkProps {
 const NavLink = ({ href, children, onClick }: NavLinkProps) => (
   <a
     href={href}
-    onClick={onClick}
+    onClick={() => {
+      soundFx.playClick();
+      if (onClick) onClick();
+    }}
     className="text-slate-400 hover:text-slate-100 transition-colors font-medium text-sm tracking-normal"
   >
     {children}
@@ -69,8 +73,13 @@ export default function Navbar() {
           >
             Resume
           </a>
+          <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 bg-white/5 border border-amber-500/25 rounded-full text-[11px] font-mono text-amber-400 select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>3D WORLD ON</span>
+          </div>
           <a
             href="#contact"
+            onClick={() => soundFx.playClick()}
             className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-lg transition-all text-sm active:scale-95 shadow-sm"
           >
             Hire Me

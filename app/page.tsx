@@ -6,6 +6,7 @@ import Hobbies from "./components/Hobbies";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ThreeCanvasWrapper from "./components/3d/ThreeCanvasWrapper";
 import {
   BASE_URL,
   EMAIL_ADDRESS,
@@ -113,6 +114,9 @@ export default function Home() {
         aria-hidden="true" 
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" 
       />
+
+      {/* Interactive 3D Three.js Universe */}
+      <ThreeCanvasWrapper />
 
       {/* Navigation */}
       <Navbar />

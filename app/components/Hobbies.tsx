@@ -23,6 +23,9 @@ export default function Hobbies() {
               <h3 className="text-lg font-bold text-white tracking-tight">
                 Chess
               </h3>
+              <span className="ml-auto text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                3D PIECE LIVE
+              </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               I play because every mistake is entirely your own. Calculating variations under time pressure and staying calm when the board gets chaotic is surprisingly similar to debugging tricky race conditions.

@@ -1,6 +1,8 @@
-import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
+"use client";
+import { Github, ExternalLink, ArrowUpRight, Sparkles } from "lucide-react";
 import { PROJECTS } from "../data";
 import type { Project } from "../data";
+import { soundFx } from "./3d/soundFx";
 
 interface ProjectCardProps {
   project: Project;
@@ -42,7 +44,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
             href={project.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View ${project.title} source code on GitHub`}
+            onClick={() => soundFx.playClick()}
+            aria-label={`Source: ${project.title} on GitHub`}
             className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-medium"
           >
             <Github size={15} /> Source
@@ -53,7 +56,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
             href={project.links.live}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View ${project.title} live release`}
+            onClick={() => soundFx.playClick()}
+            aria-label={
+              project.links.live.includes("play.google")
+                ? `Google Play: ${project.title}`
+                : `Live Demo: ${project.title}`
+            }
             className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 text-xs font-semibold ml-auto"
           >
             {project.links.live.includes("play.google") ? (
@@ -72,16 +80,23 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-[#232736] relative z-10">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="mb-14">
-          <span className="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2 font-medium">
-            SELECTED WORK
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Featured Projects
-          </h2>
-          <p className="text-slate-400 max-w-2xl mt-3 text-sm md:text-base leading-relaxed">
-            A collection of apps and systems I&apos;ve built, deployed, and handed over to users.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2 font-medium">
+              SELECTED WORK // 3D HOLOGRAPHIC CLUSTER
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+              Featured Projects
+            </h2>
+            <p className="text-slate-400 max-w-2xl mt-3 text-sm md:text-base leading-relaxed">
+              A collection of apps and systems I&apos;ve built, deployed, and handed over to users.
+            </p>
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-amber-500/10 border border-amber-500/30 rounded-xl text-amber-300 text-xs font-mono">
+            <Sparkles size={14} className="text-amber-400 animate-pulse" />
+            <span>Interactive 3D crystals floating in background</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
